@@ -39,7 +39,7 @@ class CarouselTemplateBuilder implements TemplateBuilder
      *
      * @param CarouselColumnTemplateBuilder[] $columnTemplateBuilders
      */
-    public function __construct(array $columnTemplateBuilders)
+    public function __construct(array $columnTemplateBuilders, $imageAspectRatio = 'rectangle', $imageSize = 'cover')
     {
         $this->columnTemplateBuilders = $columnTemplateBuilders;
     }
@@ -63,6 +63,8 @@ class CarouselTemplateBuilder implements TemplateBuilder
         $this->template = [
             'type' => TemplateType::CAROUSEL,
             'columns' => $columns,
+            'imageAspectRatio' => $imageAspectRatio,
+            'imageSize' => $imageSize,
         ];
 
         return $this->template;
